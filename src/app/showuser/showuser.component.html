@@ -1,0 +1,26 @@
+<body>                   
+    <form #search="ngForm" (ngSubmit)="getDataBySearch(search.value)">
+    <button id="mar"  class="btn btn-md" style="background-color: rgb(149, 213, 238);border-style: solid;" (click)="nav()" >Back</button>&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;
+    <input type="text" style="height: 36px;border-radius: 10px;" ngModel name="cust_id" placeholder="Search by customer id">
+    &nbsp;&ensp;<button class="btn btn-md" style="background-color: rgb(149, 213, 238);border-style: solid;" type="submit">Search</button>
+  </form>
+<br><br>
+<table id="mar" class="table table-bordered table-hover table-condensed table-stripped" style="width:75%">
+    <thead class="table-primary">
+        <tr class="bg-info">
+            <th>Customer ID</th>
+            <th>Name</th>
+            <th>Phone No</th>
+            <th>Animal</th>            
+     </tr>
+    </thead>
+    <tbody  style="text-align:center">
+    <tr *ngFor="let fd of details">
+        <td>{{fd.cust_id}}</td>
+        <td>{{fd.name}}</td>
+        <td>{{fd.phoneNo}}</td>
+        <td>{{fd.animal}}</td>
+   </tr>
+</tbody>
+</table>
+</body>

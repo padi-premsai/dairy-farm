@@ -1,0 +1,22 @@
+body{
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rPxxmD8WSMxpHwxrb4geKs4bMN9xJZyeOg&usqp=CAU');
+  background-size: 2000px 700px;
+  padding-bottom: 30%;
+  padding-top: 3%;
+}
+.modal {
+   
+    margin-left: 30%;
+    width: 30% ;
+    margin-top: 10%;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  #first {
+    border: 2px solid black;
+ }
+.checkit{
+  background-color: rgb(156, 84, 84);
+  size: 400px;
+}

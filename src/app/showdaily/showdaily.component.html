@@ -1,0 +1,48 @@
+<body>
+    <br>
+    <i>
+        <h1>Record Details</h1>
+    </i><br>
+    <button id="mar"  class="btn btn-md" style="background-color: rgb(149, 213, 238);border-style: solid;" (click)="nav()" >Back</button>
+    <!-- <button class="btn btn-info" (click)="navToday()" style="margin-left: 20%;">Todays Records</button><br><br> -->
+    <table class="table table-bordered table-hover table-stripped table-condensed">
+        <thead class="bg-info">
+            <tr>
+                <th>Cust_ID</th>
+                <th>Name</th>
+                <th>Quantity(liters)</th>
+                <th>Price/liter</th>
+                <th>Total Amount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let record of records">
+                <td>{{record.cust_id}}</td>
+                <td>{{record.name}}</td>
+                <td>{{record.qty}}</td>
+                <td>{{record.price | currency:"INR"}}</td>
+                <td>{{record.price| total:record.qty}}</td>
+                <td><button type="submit" class="btn btn-info" data-toggle="modal" data-target="#mymodal"
+                        (click)="edit(record)"> Insert </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="modal" id="mymodal" role="dialog">
+        <div class="modal-content">
+            <div class="container">
+                <form #updateForm="ngForm" class="checkit" (ngSubmit)="setTodayRecords()" novalidate>
+                    <legend>Customer ID: &nbsp;{{Onerecord.cust_id}}</legend><br>
+                    <legend>Name: &nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;{{Onerecord.name}}</legend><br />
+                    <legend>Date:&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;{{Onerecord.date}}</legend>
+                    <legend>Animal: &nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;{{Onerecord.animal}} </legend><br>
+                    <legend>Quantity:&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;<input type="text" ngModel name="fueltype" [(ngModel)]="Onerecord.qty"></legend><br />
+                    <legend>Price: &nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;{{Onerecord.price}}</legend><br /><br>
+                    <input class="btn btn-primary btn-lg" type="submit" value="Insert" /><br><br>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br><br>
+</body>

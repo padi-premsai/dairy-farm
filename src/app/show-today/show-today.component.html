@@ -1,0 +1,29 @@
+<body>
+<form #search="ngForm" (ngSubmit)="getDataBySearch(search.value)">
+    <button id="mar"  class="btn btn-md" style="background-color: rgb(149, 213, 238);border-style: solid;" (click)="nav()" >Back</button>&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;
+    <input type="text" style="height: 36px;border-radius: 10px;" ngModel name="cust_id" placeholder="Search by customer id">
+    &nbsp;&ensp;<button class="btn btn-md" style="background-color: rgb(149, 213, 238);border-style: solid;" type="submit">Search</button>
+  </form>
+<table class="table table-bordered table-hover table-condensed table-stripped" style="width:80%">
+    <thead class="table-primary">
+        <tr class="bg-info">
+            <th>id</th>
+            <th>name</th>
+            <th>date</th>
+            <th>qantity</th>
+            <th>price/liter</th>
+            <th>Total</th>
+     </tr>
+    </thead>
+    <tbody  style="text-align:center">
+    <tr *ngFor="let detail of details">
+        <td>{{detail.cust_id}}</td>
+        <td>{{detail.name}}</td>
+        <td>{{detail.date}}</td>
+        <td>{{detail.qty}} </td>
+        <td>{{detail.price | currency:"INR"}}</td>
+        <td>{{detail.price|total:detail.qty | currency:"INR"}}</td>
+   </tr>
+</tbody>
+</table>
+</body>

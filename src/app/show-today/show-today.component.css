@@ -1,0 +1,28 @@
+body{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rPxxmD8WSMxpHwxrb4geKs4bMN9xJZyeOg&usqp=CAU');
+    background-size: 1500px 900px;
+    padding-bottom: 30%;
+}
+  .modal {
+   
+    margin-left: 30%;
+    width: 30% ;
+    margin-top: 10%;
+    justify-content: center;
+    align-items: center;
+
+  }
+  #first {
+    border: 2px solid black;
+ }
+ .button {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+ 

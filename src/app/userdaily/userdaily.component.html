@@ -1,0 +1,36 @@
+<body>
+    <div class="container"><br>
+    <i>
+        <h1>Daily Records</h1>
+    </i><br>
+    <form #searchdate="ngForm" (ngSubmit)="getAllMyDayData(searchdate.value)" style="align-content: center;">
+        <button id="mar"  class="btn btn-md" style="background-color: rgb(149, 213, 238);border-style: solid;" (click)="nav()" >Back</button>&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;&nbsp;&ensp;
+        <input type="date" style="height: 36px;border-radius: 10px;" ngModel name="date" placeholder="Search By Month">
+        &nbsp;&ensp;<button class="btn btn-md" style="background-color: rgb(149, 213, 238);border-style: solid;" type="submit">Search</button>
+      </form>
+<br><br>    
+    <table class="table table-bordered table-hover table-stripped table-condensed">
+        <thead class="bg-info">
+            <tr>
+                <th>Cust_ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Quantity</th>
+                <th>Price/liter</th>
+                <th>Total Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let record of records">
+                <td>{{record.cust_id}}</td>
+                <td>{{record.name}}</td>
+                <td>{{record.date}}</td>
+                <td>{{record.qty}}</td>
+                <td>{{record.price | currency : "INR"}}</td>
+                <td>{{record.price| total : record.qty | currency:"INR"}}</td>
+               </tr>
+        </tbody>
+    </table>
+    <legend>Total Amount: {{total | currency:"INR"}}</legend>
+    <br><br></div>
+</body>

@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="register.component.css">
+
+
+<form #registrationForm="ngForm" (ngSubmit)="registrationok(registrationForm.value)" novalidate style="padding-left: 40%;">
+    
+    <pre>
+
+    </pre>
+
+    Name : &nbsp;&ensp;&nbsp;&ensp;&nbsp;<input type="text" ngModel name="name" #username="ngModel" required minlength="3" maxlength="20" placeholder="Enter Your Name" ><br><br>
+        
+    Phone No: &nbsp;<input type="text" ngModel name="phoneNo" #phonen="ngModel" required minlength="10" maxlength="10"  placeholder="Enter Phone Number"><br><br>
+        Animal : &nbsp;&ensp;&nbsp;&ensp;<select ngModel name="animal" #Animall="ngModel" required style="height: 31px;width: 190px;text-align: center;">
+            <option value="" disabled selected hidden>Select Animal</option>
+            <option value="cow" >Cow</option>
+            <option vlaue="buffalo" >Buffalo</option>
+            <!-- <option value="cow&buffalo" >Cow & Buffalo</option> -->
+        </select><br><br>
+    Password : &nbsp;<input type="password" ngModel name="password" #pass = "ngModel" required minlength="6" maxlength="12" placeholder="Enter Your Password"><br><br>
+     
+   <button  class="btn btn-success" [disabled] ="registrationForm.invalid" >REGISTER</button>
+</form>
+
+
+<div *ngIf="username.errors?.['required'] && username.touched">Please enter employee Name</div>
+<div *ngIf="username.errors?.['minlength'] && username.touched">Enter atleast 3 characters</div>
+
+
+
+<!-- <div *ngIf="empMail.errors?.['required'] && empMail.touched">Please enter emailId</div>
+<div *ngIf="empMail.errors?.['minlength'] && empMail.touched">Enter atleast 12 characters</div> -->
+
+
+<div *ngIf="Animall.errors?.['required'] && Animall.touched">Please select Animal  </div>
+
+
+
+
+<div *ngIf="phonen.errors?.['required'] && phonen.touched">Please enter phone number</div>
+<div *ngIf="phonen.errors?.['minlength'] && phonen.touched">Enter atleast 6 characters</div>
+
+<div *ngIf="pass.errors?.['required'] && pass.touched">lease enter password</div>
+<div *ngIf="pass.errors?.['minlength'] && pass.touched">Enter atleast 6 characters</div>

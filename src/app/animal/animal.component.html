@@ -1,0 +1,38 @@
+<body >
+    <div class="container" >
+    <button id="mar"  class="btn btn-md" style="background-color: rgb(149, 213, 238);border-style: solid;" (click)="nav()" >Back</button>
+    <br><br>
+    <table class="table table-bordered table-hover table-condensed table-stripped" style="width: 80%">
+    <thead class="table-primary">
+        <tr class="bg-info" style="text-align:center">
+            <th>Animal</th>
+            <th>Price</th>
+            <th>Action</th> 
+     </tr>
+    </thead>
+    <tbody  style="text-align:center">
+    <tr *ngFor="let amount of amounts">
+        <td>{{amount.animal}}</td>
+        <td>{{amount.price}}</td>
+        <td><button type="submit" class="btn btn-info" data-toggle="modal" data-target="#mymodal" (click)="update(amount)" >Update</button></td>
+       
+   </tr>
+</tbody>
+</table>
+</div>
+</body>
+<div class="modal" id="mymodal" role="dialog">
+    <div class="modal-content">
+        <div class="container" >
+            <div>
+            <form #add="ngForm" style="padding: 50px;background-color: aquamarine;" (ngSubmit) = "editAmount(add.value)" >
+
+                <h5>Animal:</h5><input type="text" ngModel name="animal" [(ngModel)]="updateAmount.animal" ><br><br>
+                <h5>Price:</h5><input type="text" ngModel name="price" [(ngModel)]="updateAmount.price" ><br>
+               <br><br>
+                <button class="btn btn-info">Update</button>           
+            </form>       
+            </div>
+        </div>
+    </div>
+</div>

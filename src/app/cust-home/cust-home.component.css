@@ -1,0 +1,21 @@
+#high:hover{
+    background: antiquewhite;
+    transition: 1s;
+    transform:scale(1.1);
+  }
+  img{
+    transform: 2s;
+    width:200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-left: 35%;
+  }
+  h5{
+    text-align: center;
+  }
+  body{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rPxxmD8WSMxpHwxrb4geKs4bMN9xJZyeOg&usqp=CAU');
+    background-size: 1400px 700px;
+    padding: 5%;
+    padding-bottom: 22%;
+}
